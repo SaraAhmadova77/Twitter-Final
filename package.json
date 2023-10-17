@@ -1,9 +1,5 @@
 {
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.8.0",
-    "@typescript-eslint/parser": "^6.8.0",
-    "eslint": "^8.51.0",
-    "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   },
   "husky": {
@@ -13,10 +9,15 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "eslint ./**/*.ts",
-    "format": "eslint ./**/*.ts --fix"
+    "lint": "eslint client/**/*.ts server/**/*.ts",
+  "format": "prettier --write client/**/*.ts server/**/*.ts",
+  "lint:fix": "npm run lint -- --fix"
   },
   "devDependencies": {
-    "husky": "^8.0.3"
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "eslint": "^8.51.0",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.3"
   }
 }
