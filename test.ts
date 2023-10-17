@@ -1,2 +1,2 @@
-const test="hia"
-console.log(test)
+const test = 'hia';
+console.log(test);

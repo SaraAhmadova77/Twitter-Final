@@ -9,9 +9,9 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "eslint client/**/*.ts server/**/*.ts",
-  "format": "prettier --write client/**/*.ts server/**/*.ts",
-  "lint:fix": "npm run lint -- --fix"
+    "lint": "eslint client/**/*.ts client/**/*.tsx server/**/*.ts",
+    "format": "prettier --write client/**/*.ts client/**/*.tsx server/**/*.ts",
+    "lint:fix": "npm run lint -- --fix"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.8.0",

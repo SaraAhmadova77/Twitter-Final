@@ -1,2 +1,2 @@
-const sayHi="Hi"
-console.log(sayHi)
+const sayHi = 'Hi';
+console.log(sayHi);
