@@ -2,7 +2,8 @@ import './App.css'
 
 function App() {
   const hello = "Hello Node-Starter"
-  console.log(hello);
+  const hello7 = "Hello Node-Starter"
+  console.log(hello,hello7);
   return (
     <>
     
