@@ -1,2 +1,2 @@
-const tests = "2";
+const tests = '2';
 console.log(tests);
