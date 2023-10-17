@@ -9,8 +9,8 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "eslint client/**/*.ts client/**/*.tsx server/**/*.ts",
-    "format": "prettier --write client/**/*.ts client/**/*.tsx server/**/*.ts",
+    "lint": "eslint  client/**/*.tsx server/**/*.ts",
+    "format": "prettier --write client/**/*.tsx server/**/*.ts",
     "lint:fix": "npm run lint -- --fix"
   },
   "devDependencies": {
