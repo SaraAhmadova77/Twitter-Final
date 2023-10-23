@@ -1,10 +1,5 @@
-import './App.css';
-
 function App() {
-  const hello = 'Hello Node-Starter';
-  const hello7 = 'Hello Node-Starter';
-  console.log(hello, hello7);
-  return <></>;
+  return <h1 className=" text-sm text-cyan-400">Hello world!</h1>;
 }
 
 export default App;
