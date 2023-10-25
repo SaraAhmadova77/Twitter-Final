@@ -1,5 +1,5 @@
-import { Route, Routes } from "react-router-dom";
-import RegisterPage from "./pages/RegisterPage";
+import { Route, Routes } from 'react-router-dom';
+import RegisterPage from './pages/RegisterPage';
 
 function App() {
   return (
