@@ -18,21 +18,17 @@ AppDataSource.initialize()
     console.log('There is an error with connection');
   });
 
-  //TODO:WILL BE REMOVED
-app.post('/', async(req, res) => {
-  const newUser = await AppDataSource.getRepository(User).create(
-    req.body
-  );
+//TODO:WILL BE REMOVED
+app.post('/', async (req, res) => {
+  const newUser = await AppDataSource.getRepository(User).create(req.body);
   const result = await AppDataSource.getRepository(User).save(newUser);
-  console.log("new user created -- ", result);
-  res.status(200).json("New user has been created!");
- 
+  console.log('new user created -- ', result);
+  res.status(200).json('New user has been created!');
 });
-app.get('/', async(req, res) => {
-  const users = await AppDataSource.getRepository(User).find()
-  console.log(users)
-  res.setHeader("content-type", "application/json").json(users);
- 
+app.get('/', async (req, res) => {
+  const users = await AppDataSource.getRepository(User).find();
+  console.log(users);
+  res.setHeader('content-type', 'application/json').json(users);
 });
 
 app.listen('3000', () => {
