@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import Login from "./pages/Login";
 import RegisterPage from "./pages/RegisterPage";
 
 function App() {
@@ -6,8 +7,8 @@ function App() {
     <>
       <Routes>
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
-      {/* <h1 className=" text-sm text-cyan-400">Hello world!</h1> */}
     </>
   );
 }
