@@ -7,18 +7,18 @@ import { Link } from "react-router-dom";
 const RegisterPage = () => {
   return (
     <>
-      <div className="flex w-full h-sceen">
+      <div className="flex">
         <Aside />
-        <main className="bg-black w-2/5">
-          <div className="p-5 flex justify-center items-center">
-            <div className="text-gray-400">
-              <span className="text-white text-5xl">
+        <main className="bg-black min-h-screen h-auto w-2/5 lg:w-2/5 md:full sm:w-full xs:w-full">
+          <div className="container mx-auto flex justify-center items-center">
+            <div className="py-3 px-5">
+              <span className="text-gray-300 text-5xl">
                 <BsTwitter />
               </span>
-              <h1 className="text-white text-6xl mb-10 mt-10 font-bold">
+              <h1 className="text-gray-300 text-6xl mb-10 mt-10 font-bold">
                 Happening now
               </h1>
-              <h2 className="text-3xl text-white mb-8 font-bold">
+              <h2 className="text-gray-300 text-3xl mb-8 font-bold">
                 Join Twitter now
               </h2>
 
@@ -30,8 +30,13 @@ const RegisterPage = () => {
                     password: "",
                   }}
                   validationSchema={Yup.object().shape({
-                    username: Yup.string().required("Username is required"),
-                    email: Yup.string().required("Email is required"),
+                    username: Yup.string().required("Username is required")
+                    .max(50, "Username must be at most 50 characters"),
+                    email: Yup.string().required("Email is required")
+                    .matches(
+                      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                      "Invalid email format"
+                    ),
                     password: Yup.string()
                       .required("Password is required")
                       .min(6, "Password must contain from 6 to 50 characters")
@@ -53,7 +58,8 @@ const RegisterPage = () => {
                           id="username"
                           name="username"
                           placeholder="username"
-                          className=" w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                       
+                          className=" w-full px-3 py-2 border rounded-2xl focus:outline-none focus:border-blue-500"
                         />
                         <ErrorMessage
                           name="username"
@@ -73,7 +79,7 @@ const RegisterPage = () => {
                           id="email"
                           name="email"
                           placeholder="email"
-                          className=" w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                          className=" w-full px-3 py-2 border rounded-2xl focus:outline-none focus:border-blue-500"
                         />
                         <ErrorMessage
                           name="email"
@@ -93,7 +99,7 @@ const RegisterPage = () => {
                           id="password"
                           name="password"
                           placeholder="********"
-                          className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                          className="w-full px-3 py-2 border rounded-2xl focus:outline-none focus:border-blue-500"
                         />
                         <ErrorMessage
                           name="password"
@@ -107,8 +113,8 @@ const RegisterPage = () => {
                         disabled={isSubmitting || !isValid}
                         className={
                           isValid
-                            ? "hover:bg-blue-400  focus:bg-blue-400 bg-blue-500 text-white mt-3 w-full rounded-lg py-2 px-6 focus:outline-none"
-                            : "bg-blue-500 text-white mt-3 py-2 px-6 rounded-lg w-full focus:outline-none"
+                            ? "hover:bg-blue-400  focus:bg-blue-400 bg-blue-500 text-white mt-3 w-full rounded-2xl py-2 px-6 focus:outline-none"
+                            : "bg-blue-500 text-white mt-3 py-2 px-6 rounded-2xl w-full focus:outline-none"
                         }
                       >
                         Sign Up
